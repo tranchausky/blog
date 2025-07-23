@@ -1,6 +1,7 @@
 ---
 title: "Connect remote desktop with cloudflare tunner"
 date: 2025-07-23
+layout: post
 ---
 
 
