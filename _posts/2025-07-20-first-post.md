@@ -33,3 +33,6 @@ For User account, enter your RDP server username and password.
 Double-click the newly added PC.
 When asked if you want to continue, select Continue.
 ```
+
+
+<img width="810" height="753" alt="image" src="https://github.com/user-attachments/assets/74b4c223-7e1c-493f-94d3-ba9467c553b1" />
