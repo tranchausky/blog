@@ -15,3 +15,5 @@ Hardware version V9.3.03
 Software version VT9.3.10P2N2
 Boot version V9.3.10P10N2
 ```
+
+<img width="1006" height="461" alt="image" src="https://github.com/user-attachments/assets/852992ec-a6fd-4b4e-8a38-da44b3636e77" />
