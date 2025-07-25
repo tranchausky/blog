@@ -1,7 +1,13 @@
 title: My Blog
-paginate: 5
-paginate_path: "/page:num"
 theme: minima
 future: true
 plugins:
-  - jekyll-paginate
+  - jekyll-paginate-v2
+
+pagination:
+  enabled: true
+  per_page: 5
+  title: ':title - page :num'
+  permalink: /page/:num/
+  sort_field: 'date'
+  sort_reverse: true
