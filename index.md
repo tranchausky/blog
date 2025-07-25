@@ -3,43 +3,34 @@ title: Home
 layout: home
 pagination:
   enabled: true
-  per_page: 5
-  permalink: '/page/:num/'
 ---
 
 <h1>My Blog</h1>
 
-<div class="home">
-  {%- if paginator.posts.size > 0 -%}
-    <ul class="post-list">
-      {%- for post in paginator.posts -%}
-        <li>
-            <a class="post-link" href="{{ post.url | relative_url }}">
-              {{ post.title | escape }}
-            </a>
-        </li>
-      {%- endfor -%}
-    </ul>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
 
-    <div class="pagination">
-      {%- if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Previous</a>
-      {%- endif -%}
+<ul>
+  {% for post in paginator.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
 
-      {%- for page in (1..paginator.total_pages) -%}
-        {%- if page == paginator.page -%}
-          <span class="page current"> {{ page }} </span>
-        {%- else -%}
-          <a class="page" href="{{ paginator.paginate_path | replace: ':num', page | relative_url }}">{{ page }}</a>
-        {%- endif -%}
-      {%- endfor -%}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}">« Back</a>
+  {% endif %}
 
-      {%- if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
-      {%- endif -%}
-    </div>
+  <span>Page {{ paginator.page }} / {{ paginator.total_pages }}</span>
 
-  {%- else -%}
-    <p>No Post.</p>
-  {%- endif -%}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}">Next »</a>
+  {% endif %}
 </div>
