@@ -4,6 +4,15 @@ layout: default
 
 <h1>{{ site.title }}</h1>
 
+
+<div id="post-list"></div>
+<div id="pagination">
+  <button onclick="prevPage()">← Trước</button>
+  <span id="page-num"></span>
+  <button onclick="nextPage()">Sau →</button>
+</div>
+
+
 {% assign posts_per_page = 5 %}
 {% assign page_num = page.page_num | default: 1 %}
 {% assign start = posts_per_page | times: page_num | minus: posts_per_page %}
