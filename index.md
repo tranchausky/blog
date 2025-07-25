@@ -1,26 +1,23 @@
 ---
-title: Home
 layout: home
+pagination:
+  enabled: true
 ---
-
-<h1>My Blog</h1>
 
 <ul>
   {% for post in paginator.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
 
 <div class="pagination">
-  {% if paginator.previous_page %}
+  {% if paginator.previous_page_path %}
     <a href="{{ paginator.previous_page_path }}">« Back</a>
   {% endif %}
 
   <span>Page {{ paginator.page }} / {{ paginator.total_pages }}</span>
 
-  {% if paginator.next_page %}
+  {% if paginator.next_page_path %}
     <a href="{{ paginator.next_page_path }}">Next »</a>
   {% endif %}
 </div>
