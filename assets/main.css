@@ -3,11 +3,14 @@
       max-width: 800px;
       margin: auto;
       padding: 20px;
-      line-height: 1.6;
+      line-height: 1.6;margin-top: 0; padding-top: 0;
     }
     nav a {
       margin-right: 10px;
     }
+    h1{font-size: 23px; margin-bottom: 0;}
     #disqus_thread{border: 1px solid #80808052; padding: 10px; max-width: 500px; margin: auto; margin-top: 100px; margin-bottom: 30px;}
 #pagination{margin-top: 10px;}
-#post-list >div{padding: 10px;}
+#post-list{padding-left: 20px;}
+#post-list >div{padding: 5px;padding-left: 20px;}
+#nav{padding-top: 5px; background-color: white; position: sticky; top: 0px;}
