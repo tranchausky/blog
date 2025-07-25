@@ -74,7 +74,7 @@ unset
 <label for="styleSelect">Chọn kiểu list-style-type:</label> <span id="selectat"></span>
   <br>
   <br>
-  <select id="styleSelect" size="10" style="float:left;margin-right:40px;"></select>
+  <select id="styleSelect" size="15" style="float:left;margin-right:40px;"></select>
 
   <ul id="exampleList">
     <li>Danh sách 1</li>
