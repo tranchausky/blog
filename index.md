@@ -7,30 +7,17 @@ pagination:
 
 <h1>My Blog</h1>
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+{% assign posts_per_page = 5 %}
+{% assign page_num = page.page_num | default: 1 %}
+{% assign start = posts_per_page | times: page_num | minus: posts_per_page %}
+{% assign end = posts_per_page | times: page_num %}
 
-<ul>
-  {% for post in paginator.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+{% assign sliced = site.posts | slice: start, posts_per_page %}
+{% for post in sliced %}
+  <h2>{{ post.title }}</h2>
+{% endfor %}
 
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}">« Back</a>
-  {% endif %}
-
-  <span>Page {{ paginator.page }} / {{ paginator.total_pages }}</span>
-
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}">Next »</a>
-  {% endif %}
-</div>
+{% if page_num > 1 %}
+  <a href="/page{{ page_num | minus: 1 }}">← Trước</a>
+{% endif %}
+<a href="/page{{ page_num | plus: 1 }}">Sau →</a>
