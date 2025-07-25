@@ -16,7 +16,10 @@
 #nav{padding-top: 5px; background-color: white; position: sticky; top: 0px;}
 
 @media (max-width: 768px) {
-  article {word-break: break-all;white-space: normal;}
+  article {word-break: break-all;white-space: normal;font-size: small;}
   img{width: 100%;height: auto;}
   pre{white-space: pre-wrap;word-break: break-all;}
+  h1{font-size: 17px;}
+  h2{font-size: 15px;}
+  h3,h4,h5,h6{font-size: 14px;}
 }
