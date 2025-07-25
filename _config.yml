@@ -3,3 +3,5 @@ paginate: 5
 paginate_path: "/page:num"
 theme: minima
 future: true
+plugins:
+  - jekyll-paginate
