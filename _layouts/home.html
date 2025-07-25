@@ -4,18 +4,15 @@ layout: default
 
 <h1>{{ site.title }}</h1>
 
-
 <div id="post-list">
-    {% assign posts_per_page = 5 %}
-    {% assign page_num = page.page_num | default: 1 %}
-    {% assign start = posts_per_page | times: page_num | minus: posts_per_page %}
-    {% assign end = posts_per_page | times: page_num %}
-
-    {% assign sliced = site.posts | slice: start, posts_per_page %}
-
-    {% for post in sliced %}
-        <div><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <sup>{{ post.date | date: "%Y-%m-%d" }}</sup></div>
-    {% endfor %}
+{% assign posts_per_page = 5 %}
+{% assign page_num = page.page_num | default: 1 %}
+{% assign start = posts_per_page | times: page_num | minus: posts_per_page %}
+{% assign end = posts_per_page | times: page_num %}
+{% assign sliced = site.posts | slice: start, posts_per_page %}
+{% for post in sliced %}
+    <div><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <sup>{{ post.date | date: "%Y-%m-%d" }}</sup></div>
+{% endfor %}
 </div>
 <div id="pagination">
   <button onclick="prevPage()">← Back</button>
