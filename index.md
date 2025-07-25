@@ -1,8 +1,6 @@
 ---
 title: Home
 layout: home
-pagination:
-  enabled: true
 ---
 
 <h1>My Blog</h1>
