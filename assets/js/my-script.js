@@ -56,7 +56,7 @@ function render() {
 
   paginated.forEach(post => {
     const item = document.createElement('div');
-    item.innerHTML = `<a href="${post.url}">${convertUlrDate(post.url)}  ${post.title}</a>`;
+    item.innerHTML = `<a href="${post.url}">${post.title} <sup>${convertUlrDate(post.url)}</sup></a>`;
     container.appendChild(item);
   });
 
