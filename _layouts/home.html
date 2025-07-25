@@ -7,31 +7,7 @@ layout: default
 
 <div id="post-list"></div>
 <div id="pagination">
-  <button onclick="prevPage()">← Trước</button>
+  <button onclick="prevPage()">← Back</button>
   <span id="page-num"></span>
-  <button onclick="nextPage()">Sau →</button>
-</div>
-
-
-{% assign posts_per_page = 5 %}
-{% assign page_num = page.page_num | default: 1 %}
-{% assign start = posts_per_page | times: page_num | minus: posts_per_page %}
-{% assign end = posts_per_page | times: page_num %}
-
-{% assign sliced = site.posts | slice: start, posts_per_page %}
-<div class="home">
-<ul class="post-list"></ul>
-{% for post in sliced %}
-    <li>
-        <span>{{ post.date | date: "%Y-%m-%d" }}</span>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    </li>
-{% endfor %}
-</ul>
-<div class="pagi">
-    {% if page_num > 1 %}
-    <a href="/page{{ page_num | minus: 1 }}">← Trước</a>
-    {% endif %}
-    <a href="/page{{ page_num | plus: 1 }}">Sau →</a>
-</div>
+  <button onclick="nextPage()">Next →</button>
 </div>

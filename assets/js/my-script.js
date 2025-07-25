@@ -56,11 +56,11 @@ function render() {
 
   paginated.forEach(post => {
     const item = document.createElement('div');
-    item.innerHTML = `<a href="${post.url}">${post.title}</a>`;
+    item.innerHTML = `<a href="${post.url}">${convertUlrDate(post.url)}  ${post.title}</a>`;
     container.appendChild(item);
   });
 
-  document.getElementById('page-num').textContent = `Trang ${atpage}`;
+  document.getElementById('page-num').textContent = `Page ${atpage}`;
   updateButtons();
 }
 
@@ -83,3 +83,14 @@ function updateButtons() {
 
 // Gọi lúc đầu
 loadPosts();
+
+function convertUlrDate(url){
+  const match = url.match(/\/(\d{4})\/(\d{2})\/(\d{2})\//);
+  if (match) {
+    const [_, year, month, day] = match;
+    const dateString = `${year}-${month}-${day}`;
+    return dateString;
+  } else {
+    return '';
+  }
+}
