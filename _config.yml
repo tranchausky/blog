@@ -2,9 +2,9 @@ title: My Blog
 future: true
 
 theme: minima
-# Chỉ bật plugin paginate-v2
+# Chỉ bật plugin paginate
 plugins:
-  - jekyll-paginate-v2
+  - jekyll-paginate
 
 # Ghi đè để tắt plugin mặc định từ theme minima
 # (jekyll sẽ không tự load plugin từ theme nữa)
