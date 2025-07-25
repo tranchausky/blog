@@ -1,5 +1,4 @@
 title: My Blog
-theme: minima
 future: true
 plugins:
   - jekyll-paginate-v2
