@@ -1,19 +1,2 @@
 title: My Blog
 future: true
-
-theme: minima
-
-# Ghi đè để tắt plugin mặc định từ theme minima
-# (jekyll sẽ không tự load plugin từ theme nữa)
-whitelist: []
-
-# Cấu hình phân trang
-pagination:
-  enabled: true
-  per_page: 5
-  permalink: /page/:num/
-  title: ":title - Trang :num"
-  limit: 0
-  sort_field: "date"
-  sort_reverse: true
-  auto: true

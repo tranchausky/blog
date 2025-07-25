@@ -2,56 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ page.title }} - {{ site.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    nav a {
-      margin-right: 10px;
-    }
-    #disqus_thread{border: 1px solid #80808052; padding: 10px; max-width: 500px; margin: auto; margin-top: 100px; margin-bottom: 30px;}
-  </style>
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
 </head>
 <body>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-  </nav>
+  {% include header.html %}
 
-  <hr />
-   <div id="search-container">
-  <input type="text" id="search-input" placeholder="Tìm bài viết..." />
-  <ul id="search-results"></ul>
-</div>
- <hr />
   <main>
     {{ content }}
   </main>
 
-  {% if page.layout == "post" %}
-<div id="disqus_thread"></div>
-<script>
-    (function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://blogchau.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-{% endif %}
-
-
-  <hr />
-    <script src="{{ '/assets/js/my-script.js' | relative_url }}"></script>
-  <footer>
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-  </footer>
+  {% include footer.html %}
 </body>
 </html>
