@@ -7,7 +7,6 @@ layout: post
 
 <img width="693" height="434" alt="image" src="https://github.com/user-attachments/assets/8f9cd102-9657-4107-a0a1-2246e3e04859" />
 
-<img width="2404" height="1626" alt="image" src="https://github.com/user-attachments/assets/81f1b9c9-ccfd-4245-a427-05c12d7115c5" />
 
 # Giới thiệu về mitmproxy
 
@@ -85,3 +84,5 @@ http://mitm.it
  - Trang chủ: https://mitmproxy.org
  - Tài liệu: https://docs.mitmproxy.org
 
+
+<img width="2404" height="1626" alt="image" src="https://github.com/user-attachments/assets/81f1b9c9-ccfd-4245-a427-05c12d7115c5" />
