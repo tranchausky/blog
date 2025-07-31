@@ -4,6 +4,11 @@ date: 2025-07-31
 layout: post
 ---
 
+
+<img width="693" height="434" alt="image" src="https://github.com/user-attachments/assets/8f9cd102-9657-4107-a0a1-2246e3e04859" />
+
+<img width="2404" height="1626" alt="image" src="https://github.com/user-attachments/assets/81f1b9c9-ccfd-4245-a427-05c12d7115c5" />
+
 # Giới thiệu về mitmproxy
 
 **mitmproxy** là một **proxy trung gian (man-in-the-middle proxy)** mã nguồn mở mạnh mẽ, được sử dụng để **kiểm tra, ghi lại, sửa đổi và gỡ lỗi lưu lượng HTTP(s)** giữa client và server. Nó rất hữu ích trong việc phát triển web, kiểm thử bảo mật, phân tích ứng dụng di động, và giám sát lưu lượng mạng.
@@ -57,12 +62,24 @@ layout: post
 pip install mitmproxy
 ```
 
+## Chạy với port và với web
+```
+mitmproxy -p 8081   #giao diện dòng lệnh
+mitmweb -p 8081     #giao diện web http://localhost:8081 (web UI)
+
+mitmproxy -w logs.mitm  #lưu log
+```
 
 ## Lưu ý về HTTPS
 Để bắt HTTPS:
 
  - Bạn cần cài mitmproxy CA certificate vào thiết bị hoặc trình duyệt.
  - Đặc biệt trên thiết bị di động (Android/iOS), phải cài cert thủ công và cho phép tin cậy cert đó.
+
+truy cập vào đây để cài chứng chỉ 
+```
+http://mitm.it
+```
 
 ##  Trang chủ & tài liệu
  - Trang chủ: https://mitmproxy.org
