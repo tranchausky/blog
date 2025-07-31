@@ -84,3 +84,4 @@ Mở trình duyệt và vào: [http://localhost:8025](http://localhost:8025)
 More link document
 - https://kinsta.com/blog/mailhog/
 - https://github.com/mailhog/MailHog
+- https://viblo.asia/p/send-mail-trong-laravel-su-dung-mailhog-Eb85orBkl2G
