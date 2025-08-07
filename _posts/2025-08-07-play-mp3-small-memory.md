@@ -72,3 +72,5 @@ Nếu bạn đang dùng **Media Player trên Windows 11** và thấy nó tiêu t
 <br>
 
 ## 1by1 - The Directory Player nhẹ thật cài mà không cần quyền gì nặng có 200k
+
+https://github.com/tranchausky/blog/releases/download/basic-first/1by1_211.7z
