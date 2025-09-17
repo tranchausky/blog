@@ -1,6 +1,6 @@
 ---
 title: "Tạo một branch hoàn toàn trống (không có commit, không có lịch sử) trong Git"
-date: 2025-07-23
+date: 2025-09-17
 layout: post
 ---
 
