@@ -4,8 +4,7 @@ date: 2025-09-17
 layout: post
 ---
 
-
-<img src="https://www.mbbank.com.vn/resources/files/Tin-MB/tin-tuc/Nam-2024/Loa-thanh-toan/loa-wifi-tach-nen-mb-loa-thanh-toan.png" alt="Loa MB"/>
+<img width="100%" src="https://www.mbbank.com.vn/resources/files/Tin-MB/tin-tuc/Nam-2024/Loa-thanh-toan/mb-loa-4g--thanh-toan.png" alt="Loa MB"/>
 
 | Ngân hàng / Tổ chức | Tính năng                                                            | Chi tiết                                                                                                                                             |
 | ------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
