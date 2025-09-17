@@ -4,6 +4,9 @@ date: 2025-09-17
 layout: post
 ---
 
+
+<img src="https://www.mbbank.com.vn/resources/files/Tin-MB/tin-tuc/Nam-2024/Loa-thanh-toan/loa-wifi-tach-nen-mb-loa-thanh-toan.png" alt="Loa MB"/>
+
 | Ngân hàng / Tổ chức | Tính năng                                                            | Chi tiết                                                                                                                                             |
 | ------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **MB Bank**         | Loa thông báo chuyển khoản thành công qua “Loa thanh toán MB”        | Thiết bị phát thông báo khi tài khoản người bán nhận tiền thành công. ([MB Bank][1])                                                                 |
