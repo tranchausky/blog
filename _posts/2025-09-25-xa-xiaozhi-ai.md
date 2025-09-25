@@ -6,6 +6,9 @@ layout: post
 
 # Các trường hợp sử dụng XiaoZhi AI
 
+<img width="854" height="480" alt="image" src="https://github.com/user-attachments/assets/f720cf81-15d3-4575-9df7-c250a49d7647" />
+
+
 ## Hỗ trợ công việc
 XiaoZhi AI có thể giúp bạn tăng năng suất và hiệu quả công việc bằng cách hỗ trợ bạn thực hiện các tác vụ sau:
 
