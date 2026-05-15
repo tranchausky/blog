@@ -21,3 +21,6 @@ This is the most popular method to download `.msixbundle` or `.appxbundle` files
 
 ---
 *Note: If your browser blocks the download for security reasons, select "Keep" to proceed with the file download.*
+
+
+<img src="https://i.ibb.co/0jvzwWjz/image.png" width="700" alt="image" border="0">

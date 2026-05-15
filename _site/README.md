@@ -1,7 +1,7 @@
 # blog
 
 Cài ruby
-https://rubyinstaller.org/downloads/?utm_source=chatgpt.com
+https://rubyinstaller.org/downloads
 
 check
 ```
@@ -20,4 +20,16 @@ bundle exec jekyll serve
 Open
 ```
 http://127.0.0.1:4000
+```
+
+Build
+```
+bundle exec jekyll build
+```
+
+
+Github ty chay
+
+```
+jekyll build
 ```
