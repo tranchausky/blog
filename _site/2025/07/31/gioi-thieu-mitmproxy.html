@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitmproxy giới thiệu</title>
+  <link rel="stylesheet" href="/assets/main.css?v=20260515091924">
+</head>
+<body>
+  <nav id="nav">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+</nav>
+<hr>
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="Tìm bài viết..." />
+    <ul id="search-results"></ul>
+</div>
+<hr>
+
+  <main>
+    <article>
+  <h1>Mitmproxy giới thiệu</h1>
+  <p><em>2025-07-31</em></p>
+  <p><img width="693" height="434" alt="image" src="https://github.com/user-attachments/assets/8f9cd102-9657-4107-a0a1-2246e3e04859" /></p>
+
+<h1 id="giới-thiệu-về-mitmproxy">Giới thiệu về mitmproxy</h1>
+
+<p><strong>mitmproxy</strong> là một <strong>proxy trung gian (man-in-the-middle proxy)</strong> mã nguồn mở mạnh mẽ, được sử dụng để <strong>kiểm tra, ghi lại, sửa đổi và gỡ lỗi lưu lượng HTTP(s)</strong> giữa client và server. Nó rất hữu ích trong việc phát triển web, kiểm thử bảo mật, phân tích ứng dụng di động, và giám sát lưu lượng mạng.</p>
+
+<hr />
+
+<h2 id="-mitmproxy-là-gì">🧩 Mitmproxy là gì?</h2>
+
+<p><strong>mitmproxy</strong> là một <strong>interactive HTTPS proxy</strong>, cho phép bạn “đứng giữa” client (trình duyệt, ứng dụng) và server, từ đó xem hoặc can thiệp vào dữ liệu truyền qua lại.</p>
+
+<ul>
+  <li><strong>MITM</strong>: viết tắt của <em>Man-In-The-Middle</em>.</li>
+  <li><strong>Proxy</strong>: công cụ trung gian giữa client và server.</li>
+</ul>
+
+<hr />
+
+<h2 id="-tính-năng-nổi-bật">🎯 Tính năng nổi bật</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tính năng</th>
+      <th>Mô tả</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>📡 Ghi lại traffic</td>
+      <td>Ghi lại tất cả các yêu cầu và phản hồi HTTP/HTTPS.</td>
+    </tr>
+    <tr>
+      <td>🔍 Phân tích</td>
+      <td>Xem nội dung HTTP headers, body, cookies, v.v.</td>
+    </tr>
+    <tr>
+      <td>✍️ Sửa đổi (Modify)</td>
+      <td>Chặn, thay đổi request hoặc response khi đang chạy.</td>
+    </tr>
+    <tr>
+      <td>🐍 Hỗ trợ script Python</td>
+      <td>Tùy chỉnh hành vi proxy với script Python (<code class="language-plaintext highlighter-rouge">mitmproxy addon</code>).</td>
+    </tr>
+    <tr>
+      <td>🔐 Bypass SSL</td>
+      <td>Tạo và cài đặt CA certificate để giải mã HTTPS.</td>
+    </tr>
+    <tr>
+      <td>📜 Giao diện dòng lệnh</td>
+      <td>Có các công cụ CLI như <code class="language-plaintext highlighter-rouge">mitmproxy</code>, <code class="language-plaintext highlighter-rouge">mitmdump</code>, và <code class="language-plaintext highlighter-rouge">mitmweb</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="️-các-công-cụ-chính">⚙️ Các công cụ chính</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Công cụ</th>
+      <th>Mô tả</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mitmproxy</code></td>
+      <td>Giao diện tương tác trong terminal (TUI).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mitmdump</code></td>
+      <td>Phiên bản không có giao diện, cho scripting và automation.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">mitmweb</code></td>
+      <td>Giao diện web để xem và chỉnh sửa lưu lượng dễ dàng hơn.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-ứng-dụng-thực-tế">🧪 Ứng dụng thực tế</h2>
+
+<ul>
+  <li>Phân tích app mobile để xem API đang gọi.</li>
+  <li>Kiểm tra bảo mật giao tiếp HTTP/HTTPS.</li>
+  <li>Debug request và response khi lập trình frontend/backend.</li>
+  <li>Fake dữ liệu trả về từ server để test chức năng.</li>
+</ul>
+
+<hr />
+
+<h2 id="-cài-đặt-nhanh">🚀 Cài đặt nhanh</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>mitmproxy
+</code></pre></div></div>
+
+<h2 id="chạy-với-port-và-với-web">Chạy với port và với web</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mitmproxy -p 8081   #giao diện dòng lệnh
+mitmweb -p 8081     #giao diện web http://localhost:8081 (web UI)
+
+mitmproxy -w logs.mitm  #lưu log
+</code></pre></div></div>
+
+<h2 id="lưu-ý-về-https">Lưu ý về HTTPS</h2>
+<p>Để bắt HTTPS:</p>
+
+<ul>
+  <li>Bạn cần cài mitmproxy CA certificate vào thiết bị hoặc trình duyệt.</li>
+  <li>Đặc biệt trên thiết bị di động (Android/iOS), phải cài cert thủ công và cho phép tin cậy cert đó.</li>
+</ul>
+
+<p>truy cập vào đây để cài chứng chỉ</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://mitm.it
+</code></pre></div></div>
+
+<h2 id="trang-chủ--tài-liệu">Trang chủ &amp; tài liệu</h2>
+<ul>
+  <li>Trang chủ: https://mitmproxy.org</li>
+  <li>Tài liệu: https://docs.mitmproxy.org</li>
+</ul>
+
+<p><img width="2404" height="1626" alt="image" src="https://github.com/user-attachments/assets/81f1b9c9-ccfd-4245-a427-05c12d7115c5" /></p>
+
+</article>
+
+
+<div id="disqus_thread"></div>
+<script>
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blogchau.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </main>
+
+   <footer>
+<p>&copy; 2025 My Blog</p>
+</footer>
+
+
+
+<script src="/assets/js/my-script.js?v=20260515091924"></script>
+</body>
+</html>

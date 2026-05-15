@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới thiệu MailHog</title>
+  <link rel="stylesheet" href="/assets/main.css?v=20260515091924">
+</head>
+<body>
+  <nav id="nav">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+</nav>
+<hr>
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="Tìm bài viết..." />
+    <ul id="search-results"></ul>
+</div>
+<hr>
+
+  <main>
+    <article>
+  <h1>Giới thiệu MailHog</h1>
+  <p><em>2025-07-31</em></p>
+  <h1 id="giới-thiệu-về-mailhog">Giới thiệu về MailHog</h1>
+
+<p><strong>MailHog</strong> là một <strong>SMTP server giả lập (fake SMTP server)</strong>, thường được sử dụng trong môi trường phát triển để <strong>bắt và xem email</strong> mà ứng dụng gửi đi, <strong>mà không thực sự gửi email ra thế giới thực</strong>. Đây là công cụ cực kỳ hữu ích giúp lập trình viên kiểm tra các tính năng gửi email mà không lo gửi nhầm đến người dùng thật.</p>
+
+<hr />
+
+<h2 id="-tính-năng-chính-của-mailhog">🔧 Tính năng chính của MailHog</h2>
+
+<ul>
+  <li>✅ <strong>Giả lập SMTP server:</strong> Nhận email gửi đến như một máy chủ thật.</li>
+  <li>📬 <strong>Giao diện web:</strong> Có giao diện web trực quan để xem nội dung email (HTML, plain text, headers…).</li>
+  <li>🔁 <strong>API RESTful:</strong> Cung cấp API để truy xuất, xoá hoặc kiểm tra email tự động.</li>
+  <li>📦 <strong>Dễ tích hợp:</strong> Dùng được với hầu hết các ngôn ngữ như PHP, Node.js, Python, Ruby…</li>
+  <li>🔐 <strong>Không gửi mail ra ngoài:</strong> Không lo gửi nhầm email đến khách hàng thật trong quá trình phát triển.</li>
+</ul>
+
+<hr />
+
+<h2 id="-khi-nào-nên-dùng-mailhog">🧪 Khi nào nên dùng MailHog?</h2>
+
+<ul>
+  <li>Phát triển chức năng đăng ký, quên mật khẩu, xác minh email…</li>
+  <li>Kiểm tra định dạng nội dung email (HTML/CSS).</li>
+  <li>Test khối lượng lớn email mà không lo spam.</li>
+  <li>Môi trường staging hoặc dev.</li>
+</ul>
+
+<hr />
+
+<h2 id="️-cách-sử-dụng-ví-dụ-trên-linux-hoặc-wsl">⚙️ Cách sử dụng (ví dụ trên Linux hoặc WSL)</h2>
+
+<h3 id="1-cài-đặt-cách-nhanh-nhất">1. Cài đặt (cách nhanh nhất)</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>go <span class="nb">install </span>github.com/mailhog/MailHog@latest
+</code></pre></div></div>
+
+<p>Nếu bạn không dùng <code class="language-plaintext highlighter-rouge">Go</code>, bạn có thể dùng Docker:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run <span class="nt">-d</span> <span class="nt">-p</span> 1025:1025 <span class="nt">-p</span> 8025:8025 mailhog/mailhog
+</code></pre></div></div>
+
+<h3 id="2-cấu-hình-ứng-dụng-gửi-email">2. Cấu hình ứng dụng gửi email</h3>
+
+<ul>
+  <li>SMTP server: <code class="language-plaintext highlighter-rouge">localhost</code></li>
+  <li>SMTP port: <code class="language-plaintext highlighter-rouge">1025</code></li>
+</ul>
+
+<p>Ví dụ cấu hình trong Laravel:</p>
+
+<pre><code class="language-env">MAIL_MAILER=smtp
+MAIL_HOST=localhost
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+</code></pre>
+
+<p><img width="2444" height="1444" alt="image" src="https://github.com/user-attachments/assets/110c22ea-76c4-4069-b575-a5f3525056c3" /></p>
+
+<h3 id="3-truy-cập-giao-diện-web">3. Truy cập giao diện web</h3>
+
+<p>Mở trình duyệt và vào: <a href="http://localhost:8025">http://localhost:8025</a></p>
+
+<hr />
+
+<h2 id="-so-sánh-với-một-số-công-cụ-khác">📚 So sánh với một số công cụ khác</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Công cụ</th>
+      <th>Tính năng chính</th>
+      <th>Giao diện Web</th>
+      <th>Gửi email thật</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MailHog</td>
+      <td>SMTP giả lập</td>
+      <td>Có</td>
+      <td>❌ Không</td>
+    </tr>
+    <tr>
+      <td>Mailtrap</td>
+      <td>SMTP thật (có tính phí)</td>
+      <td>Có</td>
+      <td>❌/✅ (tùy chọn gửi)</td>
+    </tr>
+    <tr>
+      <td>Papercut SMTP</td>
+      <td>Tương tự MailHog (Windows)</td>
+      <td>Có</td>
+      <td>❌ Không</td>
+    </tr>
+    <tr>
+      <td>FakeSMTP</td>
+      <td>Java-based, đơn giản</td>
+      <td>Có</td>
+      <td>❌ Không</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<blockquote>
+  <p>Nếu bạn cần mình hướng dẫn chi tiết cách cấu hình với PHP, Node.js, Laravel hay framework khác, cứ nói nhé.</p>
+</blockquote>
+
+<p>More link document</p>
+<ul>
+  <li>https://kinsta.com/blog/mailhog/</li>
+  <li>https://github.com/mailhog/MailHog</li>
+  <li>https://viblo.asia/p/send-mail-trong-laravel-su-dung-mailhog-Eb85orBkl2G</li>
+</ul>
+
+</article>
+
+
+<div id="disqus_thread"></div>
+<script>
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blogchau.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </main>
+
+   <footer>
+<p>&copy; 2025 My Blog</p>
+</footer>
+
+
+
+<script src="/assets/js/my-script.js?v=20260515091924"></script>
+</body>
+</html>

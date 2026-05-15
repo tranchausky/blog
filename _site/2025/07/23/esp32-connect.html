@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP32 Có thể làm gì hay</title>
+  <link rel="stylesheet" href="/assets/main.css?v=20260515091924">
+</head>
+<body>
+  <nav id="nav">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+</nav>
+<hr>
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="Tìm bài viết..." />
+    <ul id="search-results"></ul>
+</div>
+<hr>
+
+  <main>
+    <article>
+  <h1>ESP32 Có thể làm gì hay</h1>
+  <p><em>2025-07-23</em></p>
+  <h1 id="các-module-hay-dùng-với-esp32">Các Module Hay Dùng Với ESP32</h1>
+
+<p>ESP32 là một vi điều khiển mạnh mẽ với Wi-Fi và Bluetooth tích hợp, rất phù hợp để kết nối với nhiều loại module mở rộng khác nhau. Dưới đây là danh sách các module phổ biến và thú vị theo từng nhóm chủ đề.</p>
+
+<hr />
+
+<h2 id="-kết-nối--giao-tiếp">🔌 KẾT NỐI – GIAO TIẾP</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Chức năng</th>
+      <th>Ghi chú</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NRF24L01</td>
+      <td>Truyền RF tầm xa</td>
+      <td>Tốc độ cao, ổn định</td>
+    </tr>
+    <tr>
+      <td>LoRa SX1278</td>
+      <td>Truyền xa (5–10km)</td>
+      <td>Dùng cho IoT vùng xa</td>
+    </tr>
+    <tr>
+      <td>RS485 TTL</td>
+      <td>Giao tiếp công nghiệp</td>
+      <td>Bền, chống nhiễu tốt</td>
+    </tr>
+    <tr>
+      <td>CAN Bus</td>
+      <td>Giao tiếp trong ô tô</td>
+      <td>ESP32 hỗ trợ CAN natively</td>
+    </tr>
+    <tr>
+      <td>USB to TTL</td>
+      <td>Nạp code/giao tiếp PC</td>
+      <td>Dùng để debug UART</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="️-cảm-biến">🌡️ CẢM BIẾN</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Mô tả</th>
+      <th>Ghi chú</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>DHT22 / DHT11</td>
+      <td>Nhiệt độ, độ ẩm</td>
+      <td>DHT22 chính xác hơn</td>
+    </tr>
+    <tr>
+      <td>BME280 / BMP280</td>
+      <td>Nhiệt độ, áp suất, độ ẩm</td>
+      <td>Giao tiếp I2C/SPI</td>
+    </tr>
+    <tr>
+      <td>MQ-x</td>
+      <td>Cảm biến khí (CO, khói, gas…)</td>
+      <td>Có nhiều loại như MQ-2, MQ-7</td>
+    </tr>
+    <tr>
+      <td>AHT20 / AHT21</td>
+      <td>Cảm biến nhiệt độ &amp; độ ẩm hiện đại</td>
+      <td>Chính xác, giao tiếp I2C</td>
+    </tr>
+    <tr>
+      <td>BH1750 / TSL2561</td>
+      <td>Cảm biến ánh sáng môi trường</td>
+      <td>I2C</td>
+    </tr>
+    <tr>
+      <td>PIR HC-SR501</td>
+      <td>Cảm biến chuyển động</td>
+      <td>Dùng cho báo trộm</td>
+    </tr>
+    <tr>
+      <td>HX711 + Load Cell</td>
+      <td>Cân điện tử</td>
+      <td>Đo khối lượng chính xác</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-camera--hình-ảnh">📷 CAMERA &amp; HÌNH ẢNH</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Chức năng</th>
+      <th>Ghi chú</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OV2640 (ESP32-CAM)</td>
+      <td>Chụp ảnh / stream video</td>
+      <td>Rẻ, tiện, có Wi-Fi sẵn</td>
+    </tr>
+    <tr>
+      <td>MLX90640</td>
+      <td>Camera nhiệt</td>
+      <td>Đo nhiệt độ từ xa</td>
+    </tr>
+    <tr>
+      <td>TFT LCD / OLED</td>
+      <td>Hiển thị dữ liệu</td>
+      <td>SSD1306, ST7735, ILI9341…</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-âm-thanh--hình-ảnh">🎮 ÂM THANH &amp; HÌNH ẢNH</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Chức năng</th>
+      <th>Ghi chú</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MAX98357A / PCM5102</td>
+      <td>Xuất âm thanh DAC</td>
+      <td>Gắn loa, tạo âm thanh</td>
+    </tr>
+    <tr>
+      <td>I2S Microphone (INMP441)</td>
+      <td>Thu âm</td>
+      <td>Dùng cho nhận dạng giọng nói</td>
+    </tr>
+    <tr>
+      <td>DFPlayer Mini</td>
+      <td>Phát nhạc từ thẻ nhớ</td>
+      <td>Có sẵn ampli</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-định-vị--thời-gian">📡 ĐỊNH VỊ &amp; THỜI GIAN</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Chức năng</th>
+      <th>Ghi chú</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NEO-6M GPS</td>
+      <td>Định vị toàn cầu</td>
+      <td>UART giao tiếp</td>
+    </tr>
+    <tr>
+      <td>DS3231 RTC</td>
+      <td>Đồng hồ thời gian thực</td>
+      <td>Rất chính xác, có pin</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-bảo-mật--nhận-diện">🔐 BẢO MẬT / NHẬN DIỆN</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Chức năng</th>
+      <th>Ghi chú</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RC522</td>
+      <td>RFID (đọc thẻ từ)</td>
+      <td>Giao tiếp SPI</td>
+    </tr>
+    <tr>
+      <td>R305 / AS608</td>
+      <td>Cảm biến vân tay</td>
+      <td>Lưu và xác thực vân tay</td>
+    </tr>
+    <tr>
+      <td>ESP32-S3 + Camera</td>
+      <td>Nhận diện khuôn mặt</td>
+      <td>Cần ESP32-S3 hỗ trợ AI</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-công-suất--điều-khiển-ngoài">⚡ CÔNG SUẤT – ĐIỀU KHIỂN NGOÀI</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Chức năng</th>
+      <th>Ghi chú</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Relay 1–4 kênh</td>
+      <td>Điều khiển thiết bị 220V</td>
+      <td>Có loại dùng 3.3V hoặc 5V</td>
+    </tr>
+    <tr>
+      <td>Solid State Relay</td>
+      <td>Relay bán dẫn không tiếng</td>
+      <td>Êm hơn relay cơ</td>
+    </tr>
+    <tr>
+      <td>MOSFET Module</td>
+      <td>Điều khiển LED, motor</td>
+      <td>Điều chỉnh bằng PWM</td>
+    </tr>
+    <tr>
+      <td>PZEM004T</td>
+      <td>Đo điện năng 220V</td>
+      <td>Đo áp, dòng, công suất</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-module-vui-vẻ--thí-nghiệm">🎲 MODULE VUI VẺ – THÍ NGHIỆM</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Module</th>
+      <th>Chức năng</th>
+      <th>Ghi chú</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LED Matrix (MAX7219)</td>
+      <td>Hiển thị chữ, hiệu ứng</td>
+      <td>Có loại 8x8, 8x32</td>
+    </tr>
+    <tr>
+      <td>WS2812B LED RGB</td>
+      <td>Dải LED đổi màu</td>
+      <td>Tạo hiệu ứng đẹp mắt</td>
+    </tr>
+    <tr>
+      <td>Joystick</td>
+      <td>Điều khiển 2 trục + nút nhấn</td>
+      <td>Làm tay cầm game</td>
+    </tr>
+    <tr>
+      <td>Rotary Encoder</td>
+      <td>Điều chỉnh menu, giá trị</td>
+      <td>Có thể xoay vô hạn</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="-gợi-ý-kết-hợp-module">✅ Gợi Ý Kết Hợp Module</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mục tiêu</th>
+      <th>Gợi ý kết hợp module</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Báo trộm có hình, có tiếng</td>
+      <td><code class="language-plaintext highlighter-rouge">ESP32-CAM + PIR + Loa</code></td>
+    </tr>
+    <tr>
+      <td>Trạm thời tiết mini</td>
+      <td><code class="language-plaintext highlighter-rouge">ESP32 + BME280 + OLED</code></td>
+    </tr>
+    <tr>
+      <td>Đèn nháy theo nhạc</td>
+      <td><code class="language-plaintext highlighter-rouge">ESP32 + MAX98357 + WS2812B</code></td>
+    </tr>
+    <tr>
+      <td>Thiết bị định vị cầm tay</td>
+      <td><code class="language-plaintext highlighter-rouge">ESP32 + GPS + OLED</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+
+</article>
+
+
+<div id="disqus_thread"></div>
+<script>
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blogchau.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </main>
+
+   <footer>
+<p>&copy; 2025 My Blog</p>
+</footer>
+
+
+
+<script src="/assets/js/my-script.js?v=20260515091924"></script>
+</body>
+</html>

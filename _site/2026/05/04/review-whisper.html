@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Whisper All model</title>
+  <link rel="stylesheet" href="/assets/main.css?v=20260515091924">
+</head>
+<body>
+  <nav id="nav">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+</nav>
+<hr>
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="Tìm bài viết..." />
+    <ul id="search-results"></ul>
+</div>
+<hr>
+
+  <main>
+    <article>
+  <h1>Review Whisper All model</h1>
+  <p><em>2026-05-04</em></p>
+  <h1 id="-so-sánh-model">📊 So sánh model</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Độ chính xác</th>
+      <th>Tốc độ</th>
+      <th>Gợi ý dùng</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tiny</td>
+      <td>thấp</td>
+      <td>cực nhanh</td>
+      <td>realtime demo</td>
+    </tr>
+    <tr>
+      <td>base</td>
+      <td>thấp-trung</td>
+      <td>rất nhanh</td>
+      <td>bạn đang dùng</td>
+    </tr>
+    <tr>
+      <td>👉 small</td>
+      <td><strong>trung-cao</strong></td>
+      <td>nhanh</td>
+      <td>⭐ best choice đa số</td>
+    </tr>
+    <tr>
+      <td>medium</td>
+      <td>cao</td>
+      <td>chậm hơn</td>
+      <td>audio khó / tiếng Việt</td>
+    </tr>
+    <tr>
+      <td>large</td>
+      <td>rất cao</td>
+      <td>rất chậm</td>
+      <td>production</td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 id="so-sánh-openai-whisper-gốc-với-faster-whisper">So sánh openai-whisper (gốc) với faster-whisper</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tiêu chí</th>
+      <th>openai-whisper</th>
+      <th>faster-whisper</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tốc độ</td>
+      <td>❌ chậm</td>
+      <td>✅ nhanh hơn 2–4x</td>
+    </tr>
+    <tr>
+      <td>RAM</td>
+      <td>❌ cao</td>
+      <td>✅ thấp hơn</td>
+    </tr>
+    <tr>
+      <td>GPU</td>
+      <td>dùng tốt</td>
+      <td>dùng tốt + tối ưu hơn</td>
+    </tr>
+    <tr>
+      <td>CPU</td>
+      <td>chậm</td>
+      <td>nhanh hơn rõ</td>
+    </tr>
+    <tr>
+      <td>Realtime</td>
+      <td>❌ khó</td>
+      <td>⚠️ gần realtime</td>
+    </tr>
+    <tr>
+      <td>Cài đặt</td>
+      <td>dễ</td>
+      <td>hơi kỹ hơn chút</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>openai-whisper</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!pip install -q openai-whisper
+!apt update &amp;&amp; apt install -y ffmpeg
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from google.colab import files
+uploaded = files.upload()
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import whisper
+import time
+
+# Load model
+t0 = time.perf_counter()
+model = whisper.load_model("small")
+t1 = time.perf_counter()
+
+# Transcribe
+result = model.transcribe("hn_female_ngochuyen_full_48k-fhg.mp3", language="vi")
+t2 = time.perf_counter()
+
+print(result["text"])
+
+print(f"\n⏱️ Load model: {t1 - t0:.2f} giây")
+print(f"⏱️ Transcribe: {t2 - t1:.2f} giây")
+print(f"⏱️ Tổng: {t2 - t0:.2f} giây")
+</code></pre></div></div>
+
+<p>https://vbee.vn/ file <a href="../mp3/hn_female_ngochuyen_full_48k-fhg.mp3">hn_female_ngochuyen_full_48k-fhg.mp3</a>
+Nội dung gốc</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Capybara, còn được gọi là chuột lang nước, được mệnh danh là "bộ trưởng bộ ngoại giao" trong thế giới động vật vì tính cách hiền lành, thân thiện và khả năng hòa đồng. Chúng thường sống hòa bình với các loài động vật khác, kể cả những loài săn mồi, và được yêu thích bởi sự gần gũi, thân thiện với con người.
+</code></pre></div></div>
+
+<p>tiny</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Các vì bà ra, con được gọi là chua lăng nước, được mạnh dành là bụ trường bộ ngoại giao trong thế giới động vật tìm các hiện lành, thân thiện và khả năng hoạt động. Chúng thường sống phà bình với các loại động vật khác, kể cả những loại sân mùi và được yêu thiết bởi sự gần vũi, thân thiện với con người.
+
+⏱️ Load model: 1.26 giây
+⏱️ Transcribe: 3.43 giây
+⏱️ Tổng: 4.69 giây
+</code></pre></div></div>
+
+<p>base</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Capi bara, con được gọi là chuột lang nước, được mệnh dành là bộ trưởng bộ hãi dau trong thế giới động vật kỳ tính cách hiền lạnh, thân thiện và khả năng hòa động. Chúng thường sống hòa bình với các loài động vật khác, kể cả những loài săn mùi và được ưu thích bởi sự gần vui, thân thiện với con người.
+
+⏱️ Load model: 1.41 giây
+⏱️ Transcribe: 6.56 giây
+⏱️ Tổng: 7.97 giây
+</code></pre></div></div>
+
+<p>small</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Capybara, còn được gọi là chuột lang nước, được mệnh danh là bộ trưởng bộ ngoại giao trong thế giới động vật phí tính cách hiền lạnh, thân thiện và khả năng hòa đồng. Chúng thường sống hòa bình với các loài động vật khác kể cả những loài xan mồi và được yêu thích bởi sự gần vui, thân thiện với con người.
+
+⏱️ Load model: 5.27 giây
+⏱️ Transcribe: 16.60 giây
+⏱️ Tổng: 21.87 giây
+</code></pre></div></div>
+
+<p>medium</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Capybara còn được gọi là chuột lang nước, được mệnh danh là bộ trưởng Bộ Ngoại giao trong thế giới động vật vì tính cách hiền lành, thân thiện và khả năng hòa đồng. Chúng thường sống hòa bình với các loài động vật khác kể cả những loài săn mồi và được yêu thích bởi sự gần gũi, thân thiện với con người.
+
+⏱️ Load model: 34.05 giây
+⏱️ Transcribe: 53.82 giây
+⏱️ Tổng: 87.88 giây
+</code></pre></div></div>
+
+<p>large</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Capybara còn được gọi là chuột lang nước, được mệnh danh là bộ trưởng bộ ngoại giao trong thế giới động vật vì tính cách hiền lành, thân thiện và khả năng hòa đồng. Chúng thường sống hòa bình với các loài động vật khác, kể cả những loài săn mồi, và được yêu thích bởi sự gần gũi, thân thiện với con người.
+
+⏱️ Load model: 45.36 giây
+⏱️ Transcribe: 102.25 giây
+⏱️ Tổng: 147.61 giây
+</code></pre></div></div>
+
+<h2 id="faster_whisper">faster_whisper</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!pip install -q faster-whisper
+!apt update &amp;&amp; apt install -y ffmpeg
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from google.colab import files
+uploaded = files.upload()
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from faster_whisper import WhisperModel
+import time
+
+# ⏱️ đo thời gian load model
+t0 = time.perf_counter()
+model = WhisperModel("large", compute_type="int8")
+t1 = time.perf_counter()
+
+# ⏱️ đo thời gian transcribe
+segments, info = model.transcribe(
+    "hn_female_ngochuyen_full_48k-fhg.mp3",
+    language="vi"
+)
+
+# ⚠️ cần loop qua segments để thực sự chạy hết (lazy generator)
+results = []
+for segment in segments:
+    results.append(segment)
+    print(f"[{segment.start:.2f}s -&gt; {segment.end:.2f}s] {segment.text}")
+
+t2 = time.perf_counter()
+
+# ⏱️ in thời gian
+print(f"\n⏱️ Load model: {t1 - t0:.2f} giây")
+print(f"⏱️ Transcribe: {t2 - t1:.2f} giây")
+print(f"⏱️ Tổng: {t2 - t0:.2f} giây")
+</code></pre></div></div>
+
+<p>tiny</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.00s -&gt; 8.30s]  Các pi bà ra, con được gọi là chuột lăng nước, được mẹng dành là bụ trường bộ ngoại giao trong thế giới động vật tỉ tính các thiền lành thân thiện và khả năng hòa động.
+[8.30s -&gt; 15.90s]  Chúng thường xống phà bình với các loại động vật khác, kể cả những loại xanh mùi và được yêu thiết bởi sự gần vũi, thân thiện với con người.
+
+⏱️ Load model: 1.52 giây
+⏱️ Transcribe: 3.49 giây
+⏱️ Tổng: 5.01 giây
+</code></pre></div></div>
+
+<p>base</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.00s -&gt; 8.20s]  Capibara, con được gọi là chuột lang nước, được miệng dành là bộ trưởng bộ hãi rau trong thế giới động vật kỳ tính cách hiền lạnh, thân thiện và khả năng hòa động.
+[8.20s -&gt; 15.80s]  Chúng thường sống hòa bình với các loài động vật khác, kể cả những loài xanh mùi và được yêu thích bởi sự gần vui, thân thiện với con người.
+
+⏱️ Load model: 3.91 giây
+⏱️ Transcribe: 6.29 giây
+⏱️ Tổng: 10.20 giây
+</code></pre></div></div>
+
+<p>small</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.00s -&gt; 8.20s]  Capybara, còn được gọi là chuột lang nước, được mệnh danh là bộ trưởng bộ ngoại giao trong thế giới động vật phí tính các hiền lạnh, thân thiện và khả năng hòa đồng.
+[8.20s -&gt; 15.80s]  Chúng thường sống hòa bình với các loài động vật khác, kể cả những loài xan mồi và được yêu thích bởi sự gần vui, thân thiện với con người.
+
+⏱️ Load model: 1.73 giây
+⏱️ Transcribe: 18.05 giây
+⏱️ Tổng: 19.78 giây
+</code></pre></div></div>
+
+<p>medium</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.00s -&gt; 8.16s]  Capybara còn được gọi là chuột lang nước, được mệnh danh là Bộ trưởng Bộ Ngoại giao trong thế giới động vật vì tính cách hiền lành, thân thiện và khả năng hòa đồng.
+[8.16s -&gt; 15.82s]  Chúng thường sống hòa bình với các loài động vật khác kể cả những loài săn mồi và được yêu thích bởi sự gần gũi, thân thiện với con người.
+
+⏱️ Load model: 26.35 giây
+⏱️ Transcribe: 60.70 giây
+⏱️ Tổng: 87.05 giây
+</code></pre></div></div>
+
+<p>large</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0.00s -&gt; 7.96s]  Capybara còn được gọi là chuột lang nước, được mệnh danh là bộ trưởng bộ ngoại giao trong thế giới động vật vì tính cách hiền lành, thân thiện và khả năng hòa đồng.
+[8.62s -&gt; 15.42s]  Chúng thường sống hòa bình với các loài động vật khác, kể cả những loài săn mồi, và được yêu thích bởi sự gần gũi, thân thiện với con người.
+
+⏱️ Load model: 52.17 giây
+⏱️ Transcribe: 94.73 giây
+⏱️ Tổng: 146.90 giây
+</code></pre></div></div>
+
+
+</article>
+
+
+<div id="disqus_thread"></div>
+<script>
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blogchau.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </main>
+
+   <footer>
+<p>&copy; 2025 My Blog</p>
+</footer>
+
+
+
+<script src="/assets/js/my-script.js?v=20260515091924"></script>
+</body>
+</html>

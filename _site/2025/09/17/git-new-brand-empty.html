@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tạo một branch hoàn toàn trống (không có commit, không có lịch sử) trong Git</title>
+  <link rel="stylesheet" href="/assets/main.css?v=20260515091924">
+</head>
+<body>
+  <nav id="nav">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+</nav>
+<hr>
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="Tìm bài viết..." />
+    <ul id="search-results"></ul>
+</div>
+<hr>
+
+  <main>
+    <article>
+  <h1>Tạo một branch hoàn toàn trống (không có commit, không có lịch sử) trong Git</h1>
+  <p><em>2025-09-17</em></p>
+  <h2 id="tạo-một-brand-empty">Tạo một brand empty</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout --orphan empty
+git rm -rf .
+echo "# Empty branch" &gt; README.md
+git add README.md
+git commit -m "Init empty branch"
+</code></pre></div></div>
+
+</article>
+
+
+<div id="disqus_thread"></div>
+<script>
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blogchau.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </main>
+
+   <footer>
+<p>&copy; 2025 My Blog</p>
+</footer>
+
+
+
+<script src="/assets/js/my-script.js?v=20260515091924"></script>
+</body>
+</html>

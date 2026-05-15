@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>360 view image library</title>
+  <link rel="stylesheet" href="/assets/main.css?v=20260515091924">
+</head>
+<body>
+  <nav id="nav">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+</nav>
+<hr>
+<div id="search-container">
+    <input type="text" id="search-input" placeholder="Tìm bài viết..." />
+    <ul id="search-results"></ul>
+</div>
+<hr>
+
+  <main>
+    <article>
+  <h1>360 view image library</h1>
+  <p><em>2025-07-31</em></p>
+  <h1 id="-gợi-ý-thư-viện-view360-có-thể-thêm-text-hình-youtube">🎥 Gợi ý thư viện View360 có thể thêm Text, Hình, YouTube</h1>
+
+<p>Nếu bạn đang tìm một <strong>thư viện 360 viewer</strong> có thể:</p>
+
+<ul>
+  <li>✅ <strong>Hiển thị ảnh panorama (360°)</strong></li>
+  <li>📝 <strong>Thêm chữ (text)</strong></li>
+  <li>🖼️ <strong>Thêm hình ảnh</strong></li>
+  <li>📺 <strong>Thêm video YouTube</strong> vào trong không gian 360°</li>
+</ul>
+
+<p>Thì các thư viện sau là những lựa chọn <strong>tốt và phổ biến</strong>:</p>
+
+<hr />
+
+<h2 id="-marzipano--tốt-nhẹ-mã-nguồn-mở">🥇 <a href="https://www.marzipano.net/">Marzipano</a> – Tốt, nhẹ, mã nguồn mở</h2>
+
+<h3 id="-ưu-điểm">✅ Ưu điểm:</h3>
+
+<ul>
+  <li>Hỗ trợ ảnh 360° dạng equirectangular và cubemap.</li>
+  <li>Có thể thêm <strong>hotspot</strong> để hiển thị text, ảnh, YouTube, v.v.</li>
+  <li>Rất nhẹ và dễ dùng, không cần WebGL phức tạp như Three.js.</li>
+</ul>
+
+<h3 id="-demo-hotspot-youtube">💡 Demo hotspot YouTube:</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">viewer</span><span class="p">.</span><span class="nf">createHotspot</span><span class="p">(</span><span class="nx">hotspotElement</span><span class="p">,</span> <span class="p">{</span> <span class="na">yaw</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span> <span class="na">pitch</span><span class="p">:</span> <span class="mf">0.1</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Với <code class="language-plaintext highlighter-rouge">hotspotElement</code> là 1 <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> chứa text, ảnh hoặc iframe YouTube.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="-photosphere-viewer--cực-đẹp-có-plugin-hỗ-trợ">🥈 <a href="https://photo-sphere-viewer.js.org/">PhotoSphere Viewer</a> – Cực đẹp, có plugin hỗ trợ</h2>
+
+<h3 id="-ưu-điểm-1">✅ Ưu điểm:</h3>
+
+<ul>
+  <li>UI đẹp.</li>
+  <li>Plugin hỗ trợ rất nhiều: markers, gallery, transitions.</li>
+  <li>Dễ tích hợp <strong>text, ảnh, video, YouTube</strong> bằng marker.</li>
+</ul>
+
+<h3 id="-cài-đặt">📦 Cài đặt:</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>photo-sphere-viewer
+</code></pre></div></div>
+
+<h3 id="-thêm-marker-youtube">💡 Thêm marker YouTube:</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">viewer</span><span class="p">.</span><span class="nf">addMarker</span><span class="p">({</span>
+  <span class="na">id</span><span class="p">:</span> <span class="dl">'</span><span class="s1">video1</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">tooltip</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Xem video</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">content</span><span class="p">:</span> <span class="dl">'</span><span class="s1">&lt;iframe width="300" height="200" src="https://www.youtube.com/embed/abc123" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">latitude</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+  <span class="na">longitude</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-threejs--panolensjs--cực-mạnh-chuyên-nghiệp">🥉 <a href="https://pchen66.github.io/Panolens/">three.js + panolens.js</a> – Cực mạnh, chuyên nghiệp</h2>
+
+<p>Nếu bạn muốn xây dựng 1 trải nghiệm 360° tương tác <strong>phức tạp và tùy biến cao</strong> → dùng <code class="language-plaintext highlighter-rouge">Panolens.js</code> kết hợp <code class="language-plaintext highlighter-rouge">three.js</code>.</p>
+
+<h3 id="-ưu-điểm-2">✅ Ưu điểm:</h3>
+
+<ul>
+  <li>Rất linh hoạt: thêm hotspot, camera, hoạt cảnh, văn bản, video, hình ảnh, v.v.</li>
+  <li>Hỗ trợ WebVR / WebXR.</li>
+</ul>
+
+<h3 id="-thêm-youtube-vào-hotspot">💡 Thêm YouTube vào hotspot:</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">infospot</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PANOLENS</span><span class="p">.</span><span class="nc">Infospot</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="nx">PANOLENS</span><span class="p">.</span><span class="nx">DataImage</span><span class="p">.</span><span class="nx">Info</span><span class="p">);</span>
+<span class="nx">infospot</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="nx">infospot</span><span class="p">.</span><span class="nf">setHTML</span><span class="p">(</span><span class="dl">'</span><span class="s1">&lt;iframe width="300" height="200" src="https://www.youtube.com/embed/abc123" frameborder="0"&gt;&lt;/iframe&gt;</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">panorama</span><span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="nx">infospot</span><span class="p">);</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-tổng-kết">🔍 Tổng kết:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tên thư viện</th>
+      <th>Dễ dùng</th>
+      <th>Tùy biến</th>
+      <th>Nhẹ</th>
+      <th>Hỗ trợ YouTube/Text/Ảnh</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Marzipano</strong></td>
+      <td>✅✅✅</td>
+      <td>Trung bình</td>
+      <td>✅✅✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><strong>PhotoSphere Viewer</strong></td>
+      <td>✅✅</td>
+      <td>Cao</td>
+      <td>✅✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td><strong>Panolens.js</strong></td>
+      <td>Trung bình</td>
+      <td>✅✅✅✅</td>
+      <td>✅</td>
+      <td>✅✅✅</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<p>👉 <em>Bạn muốn mình gợi ý thêm demo cụ thể cho thư viện nào không?</em></p>
+
+</article>
+
+
+<div id="disqus_thread"></div>
+<script>
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://blogchau.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </main>
+
+   <footer>
+<p>&copy; 2025 My Blog</p>
+</footer>
+
+
+
+<script src="/assets/js/my-script.js?v=20260515091924"></script>
+</body>
+</html>
