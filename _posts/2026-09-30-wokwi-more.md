@@ -401,6 +401,10 @@ thì URL Viewer có thể là:
 https://wokwi.com/experimental/viewer?diagram=https://example.com/wokwi/test1/diagram.json&firmware=https://example.com/wokwi/test1/firmware.uf2
 ```
 
+```
+https://wokwi.com/experimental/viewer?diagram=https://gist.githubusercontent.com/urish/c3d58ddaa0817465605ecad5dc171396/raw/ab1abfa902835a9503d412d55a97ee2b7e0a6b96/diagram.json&firmware=https://github.com/georgik/esp32-graphical-bootloader/releases/latest/download/graphical-bootloader-esp32-s3-box.uf2
+```
+
 Về concept:
 
 ```text
