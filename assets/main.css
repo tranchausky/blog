@@ -14,7 +14,7 @@
 #post-list{padding-left: 20px;}
 #post-list >div{padding: 5px;padding-left: 20px;}
 #nav{padding-top: 5px; background-color: white; position: sticky; top: 0px;}
-
+img{max-width: 100%;}
 @media (max-width: 768px) {
   article {word-break: break-all;white-space: normal;font-size: small;}
   img{width: 100%;height: auto;}
