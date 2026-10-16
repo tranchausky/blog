@@ -29,3 +29,5 @@ Win11 cũng có mà không nổi khi nghe hát
 Demo nghe nhạc
 
 https://skyradio.chaucc.top/at/840/40/0
+
+https://youtube.com/shorts/nGeE-VEE9d8?si=N0710-xpjHteRQkn
