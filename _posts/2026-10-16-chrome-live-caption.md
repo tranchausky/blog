@@ -24,3 +24,8 @@ Setting in chrome
 Win11 cũng có mà không nổi khi nghe hát
 
 
+
+![Nghe Nhạc Thui](https://i.ibb.co/PSNb2yd/image.png)
+Demo nghe nhạc
+
+https://skyradio.chaucc.top/at/840/40/0
