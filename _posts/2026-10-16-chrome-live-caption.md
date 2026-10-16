@@ -17,7 +17,13 @@ Ngôn ngữ hỗ trợ cũng tùy phiên bản Chrome; nếu không thấy tiế
 
 ![Chrome live caption](https://i.ibb.co/N2DszzgX/image.png)
 
-Setting in chrome
+### Setting in chrome
+
+
+
+![View setting](https://i.ibb.co/Rtcg6CQ/image.png)
+### View setting fast in chrome when have sound   
+
 
 
 ![Win11 captions](https://i.ibb.co/ynYjP2fX/image.png)
@@ -28,6 +34,9 @@ Win11 cũng có mà không nổi khi nghe hát
 ![Nghe Nhạc Thui](https://i.ibb.co/PSNb2yd/image.png)
 Demo nghe nhạc
 
-https://skyradio.chaucc.top/at/840/40/0
+[https://skyradio.chaucc.top/at/840/40/0](https://skyradio.chaucc.top/at/840/40/0)
 
-https://youtube.com/shorts/nGeE-VEE9d8?si=N0710-xpjHteRQkn
+
+[https://youtube.com/shorts/nGeE-VEE9d8?si=N0710-xpjHteRQkn
+](https://youtube.com/shorts/nGeE-VEE9d8?si=N0710-xpjHteRQkn
+)
