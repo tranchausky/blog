@@ -16,3 +16,11 @@ Ngôn ngữ hỗ trợ cũng tùy phiên bản Chrome; nếu không thấy tiế
 
 
 ![Chrome live caption](https://i.ibb.co/N2DszzgX/image.png)
+
+Setting in chrome
+
+
+![Win11 captions](https://i.ibb.co/ynYjP2fX/image.png)
+Win11 cũng có mà không nổi khi nghe hát
+
+
