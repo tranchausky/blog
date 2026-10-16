@@ -29,7 +29,7 @@ Ngôn ngữ hỗ trợ cũng tùy phiên bản Chrome; nếu không thấy tiế
 ![Win11 captions](https://i.ibb.co/ynYjP2fX/image.png)
 Win11 cũng có mà không nổi khi nghe hát
 
-
+![View](https://i.postimg.cc/Dyttfktf/Screenshot-2026-10-16-162652.png)
 
 ![Nghe Nhạc Thui](https://i.ibb.co/PSNb2yd/image.png)
 Demo nghe nhạc
